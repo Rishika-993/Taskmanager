@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}{% static "" as abc %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="{{abc}}project2.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="login-form">
+        <div class="heading">
+            <a href="#" class="heading-1 color">Login</a>
+            <a href="#" class="heading-2">Sign Up</a> 
+        </div>
+      
+         <!-- for login card      -->
+        <form method="post" action="signin" class="login-1">
+            {% csrf_token %}
+
+            <input type="text" name="uname" placeholder="Username" class="tx">
+            <input type="password" name="passw" placeholder="Password" class="pw">
+            <input type="submit" value="Login" class="submit-1 submit">
+        </form>
+        <!-- for signup card -->
+        <form method="post" action="signup" class="signup-1 hidden">
+            {% csrf_token %}
+
+            <input type="text" name="uname" placeholder="Username" class="tx">
+            <input type="email" name="email" placeholder="Email" class="tx">
+            <input type="password" name="passw" placeholder="Password" class="pw">
+            <input type="submit" value="Signup" class="submit-2 submit">
+        </form>
+   
+    </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

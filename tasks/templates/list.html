@@ -1,0 +1,19 @@
+<html>
+<head>
+{% load static %}{% static "" as baseurl %}
+<title>homepage</title>
+</head>
+<h1 style="background-color: black; color:chartreuse; text-align: center;" >
+    TASK MANAGER
+</h1>
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit", name="Create Task">
+</form>
+{% for task in tasks %}
+<div>
+     <p>{{task}}</p>
+</div>
+{% endfor %}
+</html>
