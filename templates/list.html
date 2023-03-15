@@ -7,6 +7,8 @@
     TASK MANAGER
 </h1>
 <form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
     <input type="submit", name="Create Task">
 </form>
 {% for task in tasks %}
@@ -16,4 +18,5 @@
      <p>{{task}}</p>
 </div>
 {% endfor %}
+    
 </html>
